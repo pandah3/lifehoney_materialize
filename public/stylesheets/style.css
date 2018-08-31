@@ -1,12 +1,3 @@
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-} */
-
 ul.nav-center {
     text-align: center;
 }
@@ -25,4 +16,8 @@ nav {
 
 .brand-logo {
   line-height: 100px;
+}
+
+.card-image img {
+  max-height: 270px;
 }
