@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressHbs = require('express-handlebars');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -11,8 +12,16 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+
+// app.set('views', path.join(__dirname, 'views'));
+
+//erased above & replaced it with below to use express-handlebars package;
+// expressHbs() executes the package, object inside configures the template engine
+//default layout will search for layout.hbs ; extname is to keep all extensions .hbs, not .handlebars
+// which is the default ext name for this package
+app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}));
+// change 'hbs' to '.hbs' to refer to new engine
+app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
