@@ -1,6 +1,6 @@
 <!-- <head> w/ links to css, google fonts, title, etc. is in layout.hbs
 navbar code is in in header.hbs but included (linked) in layout.hbs-->
-
+{{#each language}}
      <!-- Section: Slider (banner of photos sliding) -->
      <section class="slider">
        <!-- Copied whole ul section from materialize -->
@@ -8,23 +8,23 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
       <li>
         <img src="/images/alfalfa.png" alt="Bee on alfalfa flowers">
         <div class="caption center-align">
-          <h2>알파파 꿀 <br> Alfalfa Honey</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">A등금 꿀 <br> Grade A Honey</h5>
+          <h2>{{this.alfalfa_honey}}</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">{{this.grade_a_honey}}</h5>
           <!-- hide on small only hides subtext caption when browser is small -->
         </div>
       </li>
       <li>
         <img src="/images/honey1.jpg" alt="Honey">
         <div class="caption right-align">
-          <h2>쫀득 쫀득 몸에 좋은 꿀 <br> Great for your health</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">꿀에 만능효능을 느껴보세요<br>Honey has many health benefits</h5>
+          <h2>{{this.great_for_your_health}}</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">{{this.honey_has_many_health_benefits}}</h5>
         </div>
       </li>
       <li>
         <img src="/images/mistletoe.jpg" alt="Mistletoe">
         <div class="caption left-align">
-          <h2>겨우살이 <br> Mistletoe</h2>
-          <h5 class="light grey-text text-lighten-3 hide-on-small-only">유기농 겨우살 <br> Organic Mistletoe</h5>
+          <h2>{{this.mistletoe}}</h2>
+          <h5 class="light grey-text text-lighten-3 hide-on-small-only">{{this.organic_mistletoe}}</h5>
         </div>
       </li>
     </ul>
@@ -47,7 +47,7 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
                 <p>price</p>
                </div>
                <div class="card-action">
-                 <input type="cart" name="addToCart" value="Add To Cart" class="btn pink">
+                 <button type="cart" name="addToCart" value="Add To Cart" class="btn pink">Add To Cart</button>
                  <!-- <a href="#">Add to Cart</a> -->
                </div>
              </div>
@@ -65,7 +65,7 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
                 <p>price</p>
                </div>
                <div class="card-action">
-                 <input type="addToCart" name="" value="Add To Cart" class="btn pink">
+                 <button type="addToCart" name="" value="Add To Cart" class="btn pink">Add To Cart</button>
                  <!-- <a href="#">Add to Cart</a> -->
                </div>
              </div>
@@ -83,7 +83,7 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
                 <p>price</p>
                </div>
                <div class="card-action">
-                 <input type="addToCart" name="" value="Add To Cart" class="btn pink">
+                 <button type="addToCart" name="" value="Add To Cart" class="btn pink">Add To Cart</button>
                  <!-- <a href="#">Add to Cart</a> -->
                </div>
              </div>
@@ -270,7 +270,7 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
            <div class="center">
              <h3>
                <i class="fa fa-globe"></i>
-               어디든지 배송 가능 <br> Shipping available worldwide
+               {{this.shipping_available_worldwide}}
              </h3>
            </div>
            <div class="col s12 m6">
@@ -302,25 +302,25 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
            <div class="col s12 m6">
              <div class="card-panel red lighten-1 white-text center">
                <i class="material-icons large">email</i>
-               <h5>연락 <br> Contact</h5>
-               <p>질문, 문의사항 있으시면 연락 해주세요.<br>If you have any questions or comments, please fill out the form and we will get back to you.</p>
+               <h5>{{this.contact}}</h5>
+               <p>{{this.any_questions_or_comments}}</p>
              </div>
            </div>
 
            <!-- 2nd half of the container -->
            <div class="col s12 m6">
              <div class="card-panel grey lighten-3">
-               <h5>정보를 입력해주세요. <br> Please fill out this form.</h5>
+               <h5>{{this.form}}</h5>
                <div class="input-field">
-                 <input type="text" placeholder="이름/Name" name="" value="">
+                 <input type="text" placeholder="{{this.input_name}}" name="" value="">
                </div>
                <!-- why copy the div? why not just do multiple inputs? -->
                <div class="input-field">
-                 <input type="text" placeholder="이메일/Email" name="" value="">
+                 <input type="text" placeholder="{{this.input_email}}" name="" value="">
                </div>
                <div class="input-field">
                  <!-- in materialize, need class="materialize-textarea" for text area to appear normal; usually dont need it -->
-                 <textarea class="materialize-textarea" placeholder="문의사항/Enter Message"></textarea>
+                 <textarea class="materialize-textarea" placeholder="{{this.input_enter_message}}"></textarea>
                  <input type="submit" name="" value="Submit" class="btn pink">
                </div>
              </div>
@@ -334,3 +334,4 @@ navbar code is in in header.hbs but included (linked) in layout.hbs-->
        <!-- Class flow-text makes it bigger & responsive -->
        <p class="flow-text">Video Mart &copy; 2018</p>
      </footer>
+{{/each}}

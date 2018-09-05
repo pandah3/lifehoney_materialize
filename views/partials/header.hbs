@@ -1,22 +1,22 @@
 <!-- Navbar -->
-
+{{#each language}}
 
 <div class="navbar-fixed">
   <!-- Product Dropdown for Nav bar (place above nav tag) -->
   <ul id="dropdown" class="dropdown-content">
-    <li><a href="#honey">꿀 <br>Honey</a></li>
+    <li><a href="#honey">{{this.honey}}</a></li>
     <li class="divider"></li>
-    <li><a href="#mistletoe">겨우살이 <br>Mistletoe</a></li>
+    <li><a href="#mistletoe">{{this.mistletoe}}</a></li>
     <li class="divider"></li>
-    <li><a href="#pinksalt">핑크소금 <br>Pink Salt</a></li>
+    <li><a href="#pinksalt">{{this.pink_salt}}</a></li>
     <li class="divider"></li>
-    <li><a href="#propolis">프로폴리스 <br>Propolis</a></li>
+    <li><a href="#propolis">{{this.propolis}}</a></li>
   </ul>
 
   <nav class="white nav-extended">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center grey-text text-darken-2">LIFE HONEY</a>
+        <a href="#" class="brand-logo center grey-text text-darken-2">{{this.title}}</a>
         <!-- Set side menu bar w/ code below -->
          <a href="#" data-target="mobile-nav" class="sidenav-trigger">
            <i id="menu" class="material-icons">menu</i>
@@ -25,18 +25,16 @@
          <!-- Menu (still part of Navbar)-->
          <!-- Lists menu on top, to the R of the brand-logo (class="right")
         Class hide-on-med~~ means hide the menu bar on screen size medium and below  -->
-          <ul class="right main-nav-side hide-on-med-and-down">
-            <li>
-              <a class="grey-text text-darken-2" href="#account"><i class="fas fa-user"></i> LOG IN/SIGN UP</a>
-            </li>
-            <li>
-              <a class="grey-text text-darken-2" href="#cart"><i class="fas fa-shopping-cart"></i> MY CART</a>
-            </li>
-            <li><a class="waves-effect waves-light btn blue darken-3">LOG OUT</a></li>
-          </ul>
-          </div>
-
-
+         <ul class="right side-main-nav hide-on-med-and-down">
+           <li>
+             <a class="grey-text text-darken-2" href="#account">{{this.log_in_sign_up}}</a>
+           </li>
+           <li>
+             <a class="grey-text text-darken-2" href="#cart">{{this.my_cart}}</a>
+           </li>
+           <li><a class="waves-effect waves-light btn blue darken-3">{{this.log_out}}</a></li>
+         </ul>
+      </div>
 
       <div class="nav-content">
       <ul class="tabs tabs-transparent">
@@ -86,6 +84,10 @@
        </li>
      </ul>
 
+  <div id="test1" class="col s12">Test 1</div>
+  <div id="test2" class="col s12">Test 2</div>
+
+{{/each}}
 
 
 
