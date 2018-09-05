@@ -25,3 +25,7 @@ nav {
 #id .material-icons i {
   color: black;
 }
+
+.fa-user, .fa-shopping-cart {
+  font-size: 12px;
+}
