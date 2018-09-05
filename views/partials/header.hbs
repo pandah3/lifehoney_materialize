@@ -1,22 +1,22 @@
 <!-- Navbar -->
-
+{{#each language}}
 
 <div class="navbar-fixed">
   <!-- Product Dropdown for Nav bar (place above nav tag) -->
   <ul id="dropdown" class="dropdown-content">
-    <li><a href="#honey">꿀 <br>Honey</a></li>
+    <li><a href="#honey">{{this.honey}}</a></li>
     <li class="divider"></li>
-    <li><a href="#mistletoe">겨우살이 <br>Mistletoe</a></li>
+    <li><a href="#mistletoe">{{this.mistletoe}}</a></li>
     <li class="divider"></li>
-    <li><a href="#pinksalt">핑크소금 <br>Pink Salt</a></li>
+    <li><a href="#pinksalt">{{this.pink_salt}}</a></li>
     <li class="divider"></li>
-    <li><a href="#propolis">프로폴리스 <br>Propolis</a></li>
+    <li><a href="#propolis">{{this.propolis}}</a></li>
   </ul>
 
   <nav class="nav-extended">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center grey-text text-darken-2">LIFE HONEY</a>
+        <a href="#" class="brand-logo center grey-text text-darken-2">{{this.title}}</a>
         <!-- Set side menu bar w/ code below -->
          <a href="#" data-target="mobile-nav" class="sidenav-trigger">
            <i id="menu" class="material-icons">menu</i>
@@ -27,12 +27,12 @@
         Class hide-on-med~~ means hide the menu bar on screen size medium and below  -->
          <ul class="right side-main-nav hide-on-med-and-down">
            <li>
-             <a class="grey-text text-darken-2" href="#account">LOG IN/SIGN UP</a>
+             <a class="grey-text text-darken-2" href="#account">{{this.log_in_sign_up}}</a>
            </li>
            <li>
-             <a class="grey-text text-darken-2" href="#cart">MY CART</a>
+             <a class="grey-text text-darken-2" href="#cart">{{this.my_cart}}</a>
            </li>
-           <li><a class="waves-effect waves-light btn blue darken-3">LOG OUT</a></li>
+           <li><a class="waves-effect waves-light btn blue darken-3">{{this.log_out}}</a></li>
          </ul>
       </div>
 
@@ -87,6 +87,7 @@
   <div id="test1" class="col s12">Test 1</div>
   <div id="test2" class="col s12">Test 2</div>
 
+{{/each}}
 
 
 
